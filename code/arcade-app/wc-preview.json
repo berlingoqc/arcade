@@ -1,0 +1,6 @@
+{
+	"moduleBuild": "build/index.js",
+	"src": [
+        "src/element/arcade/dashboard.ts"
+    ]
+}

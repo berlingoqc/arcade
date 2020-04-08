@@ -1,0 +1,551 @@
+[
+    {
+        "name": "SafeArray",
+        "documentation": "Represents an Automation SAFEARRAY",
+        "type": "typeof SafeArray"
+    },
+    {
+        "name": "VarDate",
+        "documentation": "Automation date (VT_DATE)",
+        "type": "typeof VarDate"
+    },
+    {
+        "name": "AttributeCommitter",
+        "documentation": "Writes attribute values to the DOM for a group of AttributeParts bound to a\nsingle attribute. The value is only set once even if there are multiple parts\nfor an attribute.",
+        "type": "typeof AttributeCommitter"
+    },
+    {
+        "name": "AttributePart",
+        "documentation": "A Part that controls all or part of an attribute value.",
+        "type": "typeof AttributePart"
+    },
+    {
+        "name": "NodePart",
+        "documentation": "A Part that controls a location within a Node tree. Like a Range, NodePart\nhas start and end locations and can set and update the Nodes between those\nlocations.\n\nNodeParts support several value types: primitives, Nodes, TemplateResults,\nas well as arrays and iterables of those types.",
+        "type": "typeof NodePart"
+    },
+    {
+        "name": "BooleanAttributePart",
+        "documentation": "Implements a boolean attribute, roughly as defined in the HTML\nspecification.\n\nIf the value is truthy, then the attribute is present with a value of\n''. If the value is falsey, the attribute is removed.",
+        "type": "typeof BooleanAttributePart"
+    },
+    {
+        "name": "PropertyCommitter",
+        "documentation": "Sets attribute values for PropertyParts, so that the value is only set once\neven if there are multiple parts for a property.\n\nIf an expression controls the whole property value, then the value is simply\nassigned to the property under control. If there are string literals or\nmultiple expressions, then the strings are expressions are interpolated into\na string first.",
+        "type": "typeof PropertyCommitter"
+    },
+    {
+        "name": "PropertyPart",
+        "documentation": "",
+        "type": "typeof PropertyPart"
+    },
+    {
+        "name": "EventPart",
+        "documentation": "",
+        "type": "typeof EventPart"
+    },
+    {
+        "name": "TemplateResult",
+        "documentation": "The return type of `html`, which holds a Template and the values from\ninterpolated expressions.",
+        "type": "typeof TemplateResult"
+    },
+    {
+        "name": "SVGTemplateResult",
+        "documentation": "A TemplateResult for SVG fragments.\n\nThis class wraps HTML in an `<svg>` tag in order to parse its contents in the\nSVG namespace, then modifies the template to remove the `<svg>` tag so that\nclones only container the original fragment.",
+        "type": "typeof SVGTemplateResult"
+    },
+    {
+        "name": "Template",
+        "documentation": "An updatable Template that tracks the location of dynamic parts.",
+        "type": "typeof Template"
+    },
+    {
+        "name": "DefaultTemplateProcessor",
+        "documentation": "Creates Parts when a template is instantiated.",
+        "type": "typeof DefaultTemplateProcessor"
+    },
+    {
+        "name": "TemplateInstance",
+        "documentation": "An instance of a `Template` that can be attached to the DOM and updated\nwith new values.",
+        "type": "typeof TemplateInstance"
+    },
+    {
+        "name": "UpdatingElement",
+        "documentation": "Base element class which manages element properties and attributes. When\nproperties change, the `update` method is asynchronously called. This method\nshould be supplied by subclassers to render updates as desired.",
+        "type": "typeof UpdatingElement",
+        "constructors": [
+            {
+                "parameters": [],
+                "returnType": "UpdatingElement",
+                "documentation": ""
+            }
+        ]
+    },
+    {
+        "name": "CSSResult",
+        "documentation": "",
+        "type": "typeof CSSResult"
+    },
+    {
+        "name": "LitElement",
+        "documentation": "",
+        "type": "typeof LitElement",
+        "constructors": [
+            {
+                "parameters": [],
+                "returnType": "LitElement",
+                "documentation": ""
+            }
+        ]
+    },
+    {
+        "name": "DesktopEntry",
+        "documentation": "",
+        "type": "typeof DesktopEntry"
+    },
+    {
+        "name": "Subscription",
+        "documentation": "Represents a disposable resource, such as the execution of an Observable. A\nSubscription has one important method, `unsubscribe`, that takes no argument\nand just disposes the resource held by the subscription.\n\nAdditionally, subscriptions may be grouped together through the `add()`\nmethod, which will attach a child Subscription to the current Subscription.\nWhen a Subscription is unsubscribed, all its children (and its grandchildren)\nwill be unsubscribed as well.",
+        "type": "typeof Subscription"
+    },
+    {
+        "name": "Subscriber",
+        "documentation": "Implements the {@link Observer} interface and extends the\n{@link Subscription} class. While the {@link Observer} is the public API for\nconsuming the values of an {@link Observable}, all Observers get converted to\na Subscriber, in order to provide Subscription-like capabilities such as\n`unsubscribe`. Subscriber is a common type in RxJS, and crucial for\nimplementing operators, but it is rarely used as a public API.",
+        "type": "typeof Subscriber"
+    },
+    {
+        "name": "SafeSubscriber",
+        "documentation": "We need this JSDoc comment for affecting ESDoc.",
+        "type": "typeof SafeSubscriber"
+    },
+    {
+        "name": "Observable",
+        "documentation": "A representation of any set of values over any amount of time. This is the most basic building block\nof RxJS.",
+        "type": "typeof Observable"
+    },
+    {
+        "name": "SubjectSubscriber",
+        "documentation": "",
+        "type": "typeof SubjectSubscriber"
+    },
+    {
+        "name": "Subject",
+        "documentation": "A Subject is a special type of Observable that allows values to be\nmulticasted to many Observers. Subjects are like EventEmitters.\n\nEvery Subject is an Observable and an Observer. You can subscribe to a\nSubject, and you can call next to feed values as well as error and complete.",
+        "type": "typeof Subject"
+    },
+    {
+        "name": "AnonymousSubject",
+        "documentation": "",
+        "type": "typeof AnonymousSubject"
+    },
+    {
+        "name": "ConnectableObservable",
+        "documentation": "",
+        "type": "typeof ConnectableObservable"
+    },
+    {
+        "name": "GroupedObservable",
+        "documentation": "An Observable representing values belonging to the same group represented by\na common key. The values emitted by a GroupedObservable come from the source\nObservable. The common key is available as the field `key` on a\nGroupedObservable instance.",
+        "type": "typeof GroupedObservable"
+    },
+    {
+        "name": "BehaviorSubject",
+        "documentation": "A variant of Subject that requires an initial value and emits its current\nvalue whenever it is subscribed to.",
+        "type": "typeof BehaviorSubject"
+    },
+    {
+        "name": "ReplaySubject",
+        "documentation": "A variant of Subject that \"replays\" or emits old values to new subscribers.\nIt buffers a set number of values and will emit those values immediately to\nany new subscribers in addition to emitting new values to existing subscribers.",
+        "type": "typeof ReplaySubject"
+    },
+    {
+        "name": "AsyncSubject",
+        "documentation": "A variant of Subject that only emits a value when it completes. It will emit\nits latest value to all its observers on completion.",
+        "type": "typeof AsyncSubject"
+    },
+    {
+        "name": "Scheduler",
+        "documentation": "An execution context and a data structure to order tasks and schedule their\nexecution. Provides a notion of (potentially virtual) time, through the\n`now()` getter method.\n\nEach unit of work in a Scheduler is called an `Action`.\n\n```ts\nclass Scheduler {\n   now(): number;\n   schedule(work, delay?, state?): Subscription;\n}\n```",
+        "type": "typeof Scheduler"
+    },
+    {
+        "name": "Action",
+        "documentation": "A unit of work to be executed in a `scheduler`. An action is typically\ncreated from within a {@link SchedulerLike} and an RxJS user does not need to concern\nthemselves about creating and manipulating an Action.\n\n```ts\nclass Action<T> extends Subscription {\n   new (scheduler: Scheduler, work: (state?: T) => void);\n   schedule(state?: T, delay: number = 0): Subscription;\n}\n```",
+        "type": "typeof Action"
+    },
+    {
+        "name": "AsyncScheduler",
+        "documentation": "",
+        "type": "typeof AsyncScheduler"
+    },
+    {
+        "name": "AsyncAction",
+        "documentation": "We need this JSDoc comment for affecting ESDoc.",
+        "type": "typeof AsyncAction"
+    },
+    {
+        "name": "AsapScheduler",
+        "documentation": "",
+        "type": "typeof AsapScheduler"
+    },
+    {
+        "name": "QueueScheduler",
+        "documentation": "",
+        "type": "typeof QueueScheduler"
+    },
+    {
+        "name": "AnimationFrameScheduler",
+        "documentation": "",
+        "type": "typeof AnimationFrameScheduler"
+    },
+    {
+        "name": "VirtualTimeScheduler",
+        "documentation": "",
+        "type": "typeof VirtualTimeScheduler"
+    },
+    {
+        "name": "VirtualAction",
+        "documentation": "We need this JSDoc comment for affecting ESDoc.",
+        "type": "typeof VirtualAction"
+    },
+    {
+        "name": "Notification",
+        "documentation": "Represents a push-based event or value that an {@link Observable} can emit.\nThis class is particularly useful for operators that manage notifications,\nlike {@link materialize}, {@link dematerialize}, {@link observeOn}, and\nothers. Besides wrapping the actual delivered value, it also annotates it\nwith metadata of, for instance, what type of push message it is (`next`,\n`error`, or `complete`).",
+        "type": "typeof Notification"
+    },
+    {
+        "name": "InnerSubscriber",
+        "documentation": "We need this JSDoc comment for affecting ESDoc.",
+        "type": "typeof InnerSubscriber"
+    },
+    {
+        "name": "OuterSubscriber",
+        "documentation": "We need this JSDoc comment for affecting ESDoc.",
+        "type": "typeof OuterSubscriber"
+    },
+    {
+        "name": "CombineLatestOperator",
+        "documentation": "",
+        "type": "typeof CombineLatestOperator"
+    },
+    {
+        "name": "CombineLatestSubscriber",
+        "documentation": "We need this JSDoc comment for affecting ESDoc.",
+        "type": "typeof CombineLatestSubscriber"
+    },
+    {
+        "name": "RaceOperator",
+        "documentation": "",
+        "type": "typeof RaceOperator"
+    },
+    {
+        "name": "RaceSubscriber",
+        "documentation": "We need this JSDoc comment for affecting ESDoc.",
+        "type": "typeof RaceSubscriber"
+    },
+    {
+        "name": "ZipOperator",
+        "documentation": "",
+        "type": "typeof ZipOperator"
+    },
+    {
+        "name": "ZipSubscriber",
+        "documentation": "We need this JSDoc comment for affecting ESDoc.",
+        "type": "typeof ZipSubscriber"
+    },
+    {
+        "name": "WebSocketSubject",
+        "documentation": "",
+        "type": "typeof WebSocketSubject"
+    },
+    {
+        "name": "DesktopEntry",
+        "documentation": "",
+        "type": "typeof DesktopEntry"
+    },
+    {
+        "name": "GameInfoData",
+        "documentation": "",
+        "type": "typeof GameInfoData"
+    },
+    {
+        "name": "GameIconElement",
+        "documentation": "",
+        "type": "typeof GameIconElement",
+        "decorators": [
+            {
+                "name": "customElement",
+                "documentation": "",
+                "type": "any",
+                "constructors": []
+            }
+        ],
+        "constructors": [
+            {
+                "parameters": [],
+                "returnType": "GameIconElement",
+                "documentation": ""
+            }
+        ]
+    },
+    {
+        "name": "BackgroundElement",
+        "documentation": "",
+        "type": "typeof BackgroundElement",
+        "decorators": [
+            {
+                "name": "customElement",
+                "documentation": "",
+                "type": "any",
+                "constructors": []
+            }
+        ],
+        "constructors": [
+            {
+                "parameters": [],
+                "returnType": "BackgroundElement",
+                "documentation": ""
+            }
+        ]
+    },
+    {
+        "name": "WaveElement",
+        "documentation": "",
+        "type": "typeof WaveElement",
+        "decorators": [
+            {
+                "name": "customElement",
+                "documentation": "",
+                "type": "any",
+                "constructors": []
+            }
+        ],
+        "constructors": [
+            {
+                "parameters": [],
+                "returnType": "WaveElement",
+                "documentation": ""
+            }
+        ]
+    },
+    {
+        "name": "StarElement",
+        "documentation": "",
+        "type": "typeof StarElement",
+        "decorators": [
+            {
+                "name": "customElement",
+                "documentation": "",
+                "type": "any",
+                "constructors": []
+            }
+        ],
+        "constructors": [
+            {
+                "parameters": [],
+                "returnType": "StarElement",
+                "documentation": ""
+            }
+        ]
+    },
+    {
+        "name": "LightElement",
+        "documentation": "",
+        "type": "typeof LightElement",
+        "decorators": [
+            {
+                "name": "customElement",
+                "documentation": "",
+                "type": "any",
+                "constructors": []
+            }
+        ],
+        "constructors": [
+            {
+                "parameters": [],
+                "returnType": "LightElement",
+                "documentation": ""
+            }
+        ]
+    },
+    {
+        "name": "CrystalCaveElement",
+        "documentation": "",
+        "type": "typeof CrystalCaveElement",
+        "decorators": [
+            {
+                "name": "customElement",
+                "documentation": "",
+                "type": "any",
+                "constructors": []
+            }
+        ],
+        "constructors": [
+            {
+                "parameters": [],
+                "returnType": "CrystalCaveElement",
+                "documentation": ""
+            }
+        ]
+    },
+    {
+        "name": "Application",
+        "documentation": "",
+        "type": "typeof Application"
+    },
+    {
+        "name": "Universe",
+        "documentation": "",
+        "type": "typeof Universe"
+    },
+    {
+        "name": "Box",
+        "documentation": "",
+        "type": "typeof Box"
+    },
+    {
+        "name": "Light",
+        "documentation": "",
+        "type": "typeof Light"
+    },
+    {
+        "name": "RainboxElement",
+        "documentation": "",
+        "type": "typeof RainboxElement",
+        "decorators": [
+            {
+                "name": "customElement",
+                "documentation": "",
+                "type": "any",
+                "constructors": []
+            }
+        ],
+        "constructors": [
+            {
+                "parameters": [],
+                "returnType": "RainboxElement",
+                "documentation": ""
+            }
+        ]
+    },
+    {
+        "name": "PureElement",
+        "documentation": "",
+        "type": "typeof PureElement",
+        "decorators": [
+            {
+                "name": "customElement",
+                "documentation": "",
+                "type": "any",
+                "constructors": []
+            }
+        ],
+        "constructors": [
+            {
+                "parameters": [],
+                "returnType": "PureElement",
+                "documentation": ""
+            }
+        ]
+    },
+    {
+        "name": "MoonElement",
+        "documentation": "",
+        "type": "typeof MoonElement",
+        "decorators": [
+            {
+                "name": "customElement",
+                "documentation": "",
+                "type": "any",
+                "constructors": []
+            }
+        ],
+        "constructors": [
+            {
+                "parameters": [],
+                "returnType": "MoonElement",
+                "documentation": ""
+            }
+        ]
+    },
+    {
+        "name": "RippleElement",
+        "documentation": "",
+        "type": "typeof RippleElement",
+        "decorators": [
+            {
+                "name": "customElement",
+                "documentation": "",
+                "type": "any",
+                "constructors": []
+            }
+        ],
+        "constructors": [
+            {
+                "parameters": [],
+                "returnType": "RippleElement",
+                "documentation": ""
+            }
+        ]
+    },
+    {
+        "name": "VideoBackgroundComponent",
+        "documentation": "",
+        "type": "typeof VideoBackgroundComponent"
+    },
+    {
+        "name": "CarrouselElement",
+        "documentation": "",
+        "type": "typeof CarrouselElement",
+        "decorators": [
+            {
+                "name": "customElement",
+                "documentation": "",
+                "type": "any",
+                "constructors": []
+            }
+        ],
+        "constructors": [
+            {
+                "parameters": [],
+                "returnType": "CarrouselElement",
+                "documentation": ""
+            }
+        ]
+    },
+    {
+        "name": "BaseCSSStyle",
+        "documentation": "",
+        "type": "typeof BaseCSSStyle"
+    },
+    {
+        "name": "GameCardInfo",
+        "documentation": "",
+        "type": "typeof GameCardInfo"
+    },
+    {
+        "name": "ArcadeDashboardElement",
+        "documentation": "",
+        "type": "typeof ArcadeDashboardElement",
+        "decorators": [
+            {
+                "name": "customElement",
+                "documentation": "",
+                "type": "any",
+                "constructors": []
+            }
+        ],
+        "constructors": [
+            {
+                "parameters": [],
+                "returnType": "ArcadeDashboardElement",
+                "documentation": ""
+            }
+        ]
+    },
+    {
+        "name": "WebSocket",
+        "documentation": "",
+        "type": "typeof WebSocket"
+    }
+]

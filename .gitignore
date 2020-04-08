@@ -1,0 +1,6 @@
+.DS_Store
+**/build/
+**/out/
+**/test_db/
+**/dist/
+**/node_modules/

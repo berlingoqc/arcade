@@ -1,0 +1,10 @@
+{
+    "name": "arcade-app-shared-model",
+    "version": "1.0.0",
+    "description": "start-lit-element",
+    "scripts": {},
+    "author": "The Polymer Authors",
+    "license": "BSD-3-Clause",
+    "dependencies": {},
+    "devDependencies": {}
+}

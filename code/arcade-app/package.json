@@ -1,0 +1,48 @@
+{
+    "name": "start-lit-element",
+    "version": "1.0.0",
+    "description": "start-lit-element",
+    "main": "start-lit-element.js",
+    "watch": {
+        "build:ui": "src/*.ts"
+    },
+    "scripts": {
+        "watch": "npm-watch",
+        "copywc": "cp -r node_modules/@webcomponents/webcomponentsjs/bundles build && cp node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js build",
+        "build": "npm run build:ts && npm run build:electron && npm run build:bundle",
+        "build:ts": "tsc",
+        "build:electron": "tsc --p electron",
+        "build:bundle": "rm -rf build/ && mkdir build && npm run copywc && rollup -c && cp ./index_web.html ./build &&  cp index.html electron/dist/arcade-app/electron/ && cp build/index.js electron/dist/arcade-app/electron",
+        "build:ui": "npm run build:ts && npm run build:bundle",
+        "run:electron": "electron ./electron/dist/arcade-app/electron/main.js"
+    },
+    "author": "The Polymer Authors",
+    "license": "BSD-3-Clause",
+    "dependencies": {
+        "arcade-app-shared-module": "1.0.0",
+        "lit-element": "latest",
+        "npm-watch": "^0.6.0",
+        "rxjs": "^6.5.4",
+        "watch": "^1.0.2"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.2.2",
+        "@babel/plugin-proposal-class-properties": "^7.2.3",
+        "@babel/plugin-proposal-decorators": "^7.2.3",
+        "@rollup/plugin-node-resolve": "^7.1.1",
+        "@types/electron": "^1.6.10",
+        "@types/node": "^8.10.59",
+        "@types/ws": "^7.2.3",
+        "@webcomponents/webcomponentsjs": "^2.2.4",
+        "apicalypse": "^0.1.6",
+        "electron": "^8.2.0",
+        "igdb-api-node": "^4.0.3",
+        "rollup": "^1.1.0",
+        "rollup-plugin-babel": "^4.3.0",
+        "rollup-plugin-node-resolve": "^4.0.0",
+        "serve": "^10.1.1",
+        "snap-db": "^1.1.6",
+        "typescript": "^3.7.2",
+        "ws": "^7.2.3"
+    }
+}
